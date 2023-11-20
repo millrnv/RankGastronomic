@@ -21,4 +21,12 @@ public class Restaurante {
         return nombreRestaurante;
     }
 
+    public Comida getComida(){
+        return comida;
+    }
+
+    @Override
+    public String toString(){
+        return "Nombre del restaurante: " + nombreRestaurante;
+    }
 }

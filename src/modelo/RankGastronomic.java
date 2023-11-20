@@ -4,6 +4,20 @@ import java.util.List;
 
 public class RankGastronomic {
 
+    private List<Restaurante> restaurantes;
+
+    public RankGastronomic(List<Restaurante> restaurantes){
+        this.restaurantes = restaurantes;
+    }
+
+    public void setRestaurantes(List<Restaurante> restaurantes){
+        this.restaurantes = restaurantes;
+    }
+
+    public List<Restaurante> getRestaurantes(){
+        return restaurantes;
+    }
+
     public void generarMenu() {
         // TODO - implement modelo.RankGastronomic.generarMenu
         throw new UnsupportedOperationException();
@@ -29,4 +43,8 @@ public class RankGastronomic {
         throw new UnsupportedOperationException();
     }
 
+    @Override
+    public String toString(){
+        return "Restaurantes: " + restaurantes;
+    }
 }
