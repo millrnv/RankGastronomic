@@ -29,6 +29,7 @@ public class Restaurante {
         return comida;
     }
 
+
     public double getLatitud(){
         return latitud;
     }
@@ -47,6 +48,7 @@ public class Restaurante {
 
     @Override
     public String toString(){
-        return "Nombre del restaurante: " + nombreRestaurante + "\nComida: " + comida + "\nLatitud: " + latitud + "\nLongitud: " + longitud;
+      return "Nombre del restaurante: " + nombreRestaurante + "\nComida: " + comida + "\nLatitud: " + latitud + "\nLongitud: " + longitud;
+
     }
 }

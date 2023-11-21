@@ -10,12 +10,15 @@ public class Usuario {
 
 
     public Usuario(String nombreUsuario, String nickName, String contrasenia, String correo, double latitud, double longitud){
+      
         this.nombreUsuario = nombreUsuario;
         this.nickName = nickName;
         this.contrasenia = contrasenia;
         this.correo = correo;
+
         this.latitud = latitud;
         this.longitud = longitud;
+
     }
 
     public void setNombreUsuario(String nombreUsuario){
@@ -71,4 +74,5 @@ public class Usuario {
     public String toString(){
         return "Nombre de usuario: " + nombreUsuario + "\nNickname: " + nickName + "\nCorreo: " + correo;
     }
+
 }
