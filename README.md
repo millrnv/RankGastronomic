@@ -1,6 +1,6 @@
 # RankGastronomic
 # Diagrama UML
-![image](https://github.com/millrnv/RankGastronomic/assets/146766468/3574cc0d-deca-413d-8752-b09fccfa5383)
+![image](https://github.com/millrnv/RankGastronomic/assets/146766468/66cee6bf-d5d8-4a35-8242-3b38f3711cca)
 
 
 # Prototipo Interfaces
