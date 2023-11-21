@@ -5,12 +5,20 @@ public class Usuario {
     private String nickName;
     private String contrasenia;
     private String correo;
+    private double latitud;
+    private double longitud;
 
-    public Usuario(String nombreUsuario, String nickName, String contrasenia, String correo){
+
+    public Usuario(String nombreUsuario, String nickName, String contrasenia, String correo, double latitud, double longitud){
+      
         this.nombreUsuario = nombreUsuario;
         this.nickName = nickName;
         this.contrasenia = contrasenia;
         this.correo = correo;
+
+        this.latitud = latitud;
+        this.longitud = longitud;
+
     }
 
     public void setNombreUsuario(String nombreUsuario){
@@ -46,8 +54,25 @@ public class Usuario {
         return correo;
     }
 
+    public double getLatitud(){
+        return latitud;
+    }
+
+    public double getLongitud(){
+        return longitud;
+    }
+
+    public void setLatitud(double latitud){
+        this.latitud = latitud;
+    }
+
+    public void setLongitud(double longitud){
+        this.longitud = longitud;
+    }
+
     @Override
     public String toString(){
-        return "Nombre de usuario: " + nombreUsuario + "\nNickname: " + nickName + "\nContrasenia: " + contrasenia + "\nCorreo: " + correo;
+        return "Nombre de usuario: " + nombreUsuario + "\nNickname: " + nickName + "\nCorreo: " + correo;
     }
+
 }
