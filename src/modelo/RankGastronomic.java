@@ -1,5 +1,6 @@
 package modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RankGastronomic {
@@ -9,41 +10,34 @@ public class RankGastronomic {
     private List<Reseña> reseñas;
     private List<Comida> comidas;
 
-    public RankGastronomic(List<Restaurante> restaurantes, List<Usuario> usuarios, List<Reseña> reseñas, List<Comida> comidas){
-        this.restaurantes = restaurantes;
-        this.usuarios = usuarios;
-        this.reseñas = reseñas;
-        this.comidas = comidas;
+    public RankGastronomic(){
+        this.restaurantes = new ArrayList<>();
+        this.usuarios = new ArrayList<>();
+        this.reseñas = new ArrayList<>();
+        this.comidas = new ArrayList<>();
     }
 
     public void setRestaurantes(List<Restaurante> restaurantes){
         this.restaurantes = restaurantes;
     }
-
     public void setUsuarios(List<Usuario> usuarios){
         this.usuarios = usuarios;
     }
-
     public void setReseñas(List<Reseña> reseñas){
         this.reseñas = reseñas;
     }
-
     public void setComidas(List<Comida> comidas){
         this.comidas = comidas;
     }
-
     public List<Restaurante> getRestaurantes(){
         return restaurantes;
     }
-
     public List<Usuario> getUsuarios(){
         return usuarios;
     }
-
     public List<Reseña> getReseñas(){
         return reseñas;
     }
-
     public List<Comida> getComidas(){
         return comidas;
     }
@@ -54,24 +48,64 @@ public class RankGastronomic {
         throw new UnsupportedOperationException();
     }
 
-    public List<Restaurante> filtrarRestaurante() {
-        // TODO - implement modelo.RankGastronomic.filtrarRestaurante
-        throw new UnsupportedOperationException();
+    public Restaurante filtrarRestaurante(String nombre) {
+        for (Restaurante restaurante : this.restaurantes) {
+            if (restaurante.getNombreRestaurante().equals(nombre)) {
+                return restaurante;
+            }
+        }
+        return null;
     }
 
-    public double calcularDistanciaUsuarioRestaurante() {
-        // TODO - implement modelo.RankGastronomic.calcularDistanciaUsuarioRestaurante
-        throw new UnsupportedOperationException();
+    public double calcularDistanciaUsuarioRestaurante(Restaurante restaurante, Usuario usuario) {
+
+        //double radioTierra = 3958.75;//en millas
+        double radioTierra = 6371;//en kilómetros
+        double distanciaLat = Math.toRadians(restaurante.getLatitud() - usuario.getLatitud());
+        double distanciaLng = Math.toRadians(restaurante.getLongitud() - usuario.getLongitud());
+        double sindLat = Math.sin(distanciaLat / 2);
+        double sindLng = Math.sin(distanciaLng / 2);
+        double va1 = Math.pow(sindLat, 2) + Math.pow(sindLng, 2)
+                * Math.cos(Math.toRadians(usuario.getLatitud())) * Math.cos(Math.toRadians(restaurante.getLatitud()));
+        double va2 = 2 * Math.atan2(Math.sqrt(va1), Math.sqrt(1 - va1));
+        double distancia = radioTierra * va2;
+        return distancia;
     }
 
-    public void agregarUsuario() {
-        // TODO - implement modelo.RankGastronomic.agregarUsuario
-        throw new UnsupportedOperationException();
+
+    public boolean agregarUsuario(Usuario usuario) {
+        if (!usuarioExiste(usuario)) {
+            this.usuarios.add(usuario);
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public boolean usuarioExiste(Usuario usuario){
+        for(Usuario u : this.usuarios) {
+            if(usuario.getNickName().equals(u.getNickName())) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
-    public void agregarRestaurante() {
-        // TODO - implement modelo.RankGastronomic.agregarRestaurante
-        throw new UnsupportedOperationException();
+    public boolean agregarRestaurante(Restaurante restaurante) {
+        if (!restauranteExiste(restaurante)) {
+            this.restaurantes.add(restaurante);
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public boolean restauranteExiste(Restaurante restaurante) {
+        for (Restaurante r : this.restaurantes) {
+            if (restaurante.getNombreRestaurante().equals(r.getNombreRestaurante())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
