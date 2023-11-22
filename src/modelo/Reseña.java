@@ -12,7 +12,6 @@ public class Reseña {
     public void setOpinion(String opinion){
         this.opinion = opinion;
     }
-
     public void setCalificacion(int calificacion){
         this.calificacion = calificacion;
     }
@@ -20,7 +19,6 @@ public class Reseña {
     public String getOpinion(){
         return opinion;
     }
-
     public int getCalificacion(){
         return calificacion;
     }
