@@ -5,7 +5,6 @@ public class Usuario extends Ubicacion {
     private String nickName;
     private String contrasenia;
     private String correo;
-
     private Reseña reseña;
 
 
