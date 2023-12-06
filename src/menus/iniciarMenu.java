@@ -1,20 +1,22 @@
 package menus;
 
+import java.awt.*;
 import java.util.Scanner;
 
-public class main {
+public class iniciarMenu
+{
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args)
     {
-        System.out.println("Welcome to Frank's Banking Application.");
+        System.out.println("Rank Gastronomic");
 
         MenuComida menuOptions = MenuComida.z;
 
         while (menuOptions != MenuComida.g)
             try
             {
-                menu();
+                menuComida();
 
 
                 menuOptions = MenuComida.valueOf(input.nextLine());
@@ -23,28 +25,28 @@ public class main {
                 switch (menuOptions)
                 {
                     case a:
-                        //createBank();
+                        //menuRestaurante();
                         break;
 
                     case b:
-                        //addBranch();
+                        //menuRestaurante();
                         break;
 
                     case c:
-                        // addCustomer();
+                        //menuRestaurante();
                         break;
 
                     case d:
-                        // makeTransaction();
+                        //menuRestaurante();
                         break;
 
                     case e:
+                       // menuRestaurante();
+
                         break;
 
-                    case f:
-                        break;
                     case g:
-                        System.out.println("Goodbye");
+                        System.out.println("Exit");
                         break;
 
                     default:
@@ -59,18 +61,29 @@ public class main {
 
     }
 
-    public static void menu()
+    public static void menuComida()
     {
         System.out.println("\nEnter:");
-        System.out.println("\ta. Sushi");
-        System.out.println("\tb. Pizza");
+        System.out.println("\ta. Pizza");
+        System.out.println("\tb. Sushi");
         System.out.println("\tc. Hot Dog");
-        System.out.println("\td. Dessert");
+        System.out.println("\td. Desserts");
         System.out.println("\te. Salad");
-        System.out.println("\tq. Quit Application.");
+        System.out.println("\tq. Exit");
+        System.out.print("\nSelection -> ");
+
+    }
+
+    public static void menuRestaurante()
+    {
+        System.out.println("\nEnter:");
+        System.out.println("\ta. 1");
+        System.out.println("\tb. 2");
+        System.out.println("\tc. 3");
+        System.out.println("\td. 4");
+        System.out.println("\te. 5");
+        System.out.println("\tq. Exit");
         System.out.print("\nSelection -> ");
 
     }
 }
-
-

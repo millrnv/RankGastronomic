@@ -6,16 +6,15 @@ public class Usuario extends Ubicacion {
     private String contrasenia;
     private String correo;
 
-    private Reseña reseña;
 
 
-    public Usuario(String nombreUsuario, String nickName, String contrasenia, String correo, Reseña reseña, double latitud, double longitud){
+    public Usuario(String nombreUsuario, String nickName, String contrasenia, String correo, double latitud, double longitud){
         super(latitud, longitud);
         this.nombreUsuario = nombreUsuario;
         this.nickName = nickName;
         this.contrasenia = contrasenia;
         this.correo = correo;
-        this.reseña = reseña;
+
     }
 
     public void setNombreUsuario(String nombreUsuario){
@@ -30,9 +29,7 @@ public class Usuario extends Ubicacion {
     public void setCorreo(String correo){
         this.correo = correo;
     }
-    public void setReseña(Reseña reseña){
-        this.reseña = reseña;
-    }
+
 
     public String getNombreUsuario(){
         return nombreUsuario;
@@ -46,9 +43,7 @@ public class Usuario extends Ubicacion {
     public String getCorreo(){
         return correo;
     }
-    public Reseña getReseña(){
-        return reseña;
-    }
+
 
     @Override
     public String toString(){

@@ -3,6 +3,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import menus.iniciarMenu;
 public class RankGastronomic {
 
     private List<Restaurante> restaurantes;
@@ -44,13 +45,12 @@ public class RankGastronomic {
 
 
     public void generarMenu() {
-        // TODO - implement modelo.RankGastronomic.generarMenu
-        throw new UnsupportedOperationException();
     }
 
     public Restaurante filtrarRestaurante(String nombre) {
         for (Restaurante restaurante : this.restaurantes) {
             if (restaurante.getNombreRestaurante().equals(nombre)) {
+                System.out.println("El restaurante: "+restaurante.getNombreRestaurante()+ "se encuentra en nuestra aplicacion");
                 return restaurante;
             }
         }
