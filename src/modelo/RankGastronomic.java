@@ -3,6 +3,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import menus.iniciarMenu;
 public class RankGastronomic {
 
     private List<Restaurante> restaurantes;
@@ -44,13 +45,12 @@ public class RankGastronomic {
 
 
     public void generarMenu() {
-        // TODO - implement modelo.RankGastronomic.generarMenu
-        throw new UnsupportedOperationException();
     }
 
     public Restaurante filtrarRestaurante(String nombre) {
         for (Restaurante restaurante : this.restaurantes) {
             if (restaurante.getNombreRestaurante().equals(nombre)) {
+                System.out.println("El restaurante: "+restaurante.getNombreRestaurante()+ "se encuentra en nuestra aplicacion");
                 return restaurante;
             }
         }
@@ -59,8 +59,7 @@ public class RankGastronomic {
 
     public double calcularDistanciaUsuarioRestaurante(Restaurante restaurante, Usuario usuario) {
 
-        //double radioTierra = 3958.75;//en millas
-        double radioTierra = 6371;//en kilómetros
+        double radioTierra = 6371;
         double distanciaLat = Math.toRadians(restaurante.getLatitud() - usuario.getLatitud());
         double distanciaLng = Math.toRadians(restaurante.getLongitud() - usuario.getLongitud());
         double sindLat = Math.sin(distanciaLat / 2);
@@ -69,7 +68,6 @@ public class RankGastronomic {
                 * Math.cos(Math.toRadians(usuario.getLatitud())) * Math.cos(Math.toRadians(restaurante.getLatitud()));
         double va2 = 2 * Math.atan2(Math.sqrt(va1), Math.sqrt(1 - va1));
         return radioTierra * va2;
-        
     }
 
 
