@@ -6,8 +6,6 @@ public class Usuario extends Ubicacion {
     private String contrasenia;
     private String correo;
 
-
-
     public Usuario(String nombreUsuario, String nickName, String contrasenia, String correo, double latitud, double longitud){
         super(latitud, longitud);
         this.nombreUsuario = nombreUsuario;
